@@ -55,6 +55,7 @@ func FindUserByNameAndPassword(name, password string) UserBasic {
 	str := fmt.Sprintf("%d", time.Now().Unix())
 	temp := utils.MD5Encode(str)
 	utils.DB.Model(&user).Where("id = ?", user.ID).Update("identity", temp)
+	utils.DB.Model(&user).Where("id = ?", user.ID).Update("login_time", time.Now())
 	return user
 }
 

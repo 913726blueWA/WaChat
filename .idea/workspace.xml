@@ -5,35 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="adc5701a-aa78-430b-85f0-78bd3287255a" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/attach.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/upload/16548477521298498081.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/upload/16551060291474941318.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/upload/16575434331298498081.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/upload/16576286361298498081.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/upload/16576286892019727887.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/upload/16576287601427131847.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/upload/1657628846939984059.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/upload/16576302701298498081.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/upload/16576302972019727887.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/upload/16576304191298498081.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/upload/16576304952019727887.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/upload/16576343402019727887.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/upload/16576344051427131847.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/upload/16576939821298498081.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/upload/16577798831298498081.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/upload/16577799312019727887.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/upload/16579629431427131847.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/upload/1657973942939984059.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/upload/1657973946911902081.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/upload/16579741801474941318.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/message.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/message.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user_basic.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user_basic.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/router/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/router/app.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/index.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/index.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/user_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/user_service.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/md5.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/md5.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/chat/foot.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/chat/foot.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +49,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
     &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/3020291491&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/GoProject/src/新建文件夹/IMChat&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;
   }

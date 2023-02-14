@@ -262,12 +262,7 @@
                         })
                     }
                 },
-                showweixin: function () {
-                    mui.alert("请加微信号msb-shenzhuan索取")
-                },
                 showmsg: function (user, msg, isReverse, isFirst) {
-                    //console.log(">>>>>>>>>>>", user)
-                    // console.log(">>>>>>>>>>>", msg)
                     var data = {
                     }
                     data.ismine = userId() == msg.userId;
@@ -299,9 +294,6 @@
                         } else {
                             document.querySelector("#convo .mui-scroll").style.transform = 'translateY(' + 0 + 'px)';
                         }
-
-
-
                         clearTimeout(that.timer)
                     }, 100)
                 },
@@ -461,9 +453,7 @@
                     this.webSocket = new WebSocket(url);
                     //消息处理
                     this.webSocket.onmessage = function (evt) {
-                        console.log("onmessage", evt.data)
                         if (evt.data.indexOf("}") > -1) {
-                            console.log("recv json <==" + evt.data)
                             this.onmessage(JSON.parse(evt.data));
                         } else {
                             console.log("recv<==" + evt.data)
@@ -477,9 +467,6 @@
                     this.webSocket.onerror = function (evt) {
                         console.log(evt.data)
                     }
-                    /*{
-                        this.webSocket.send()
-                    }*/
                 },
                 sendmsg: function () {
 

@@ -60,9 +60,6 @@ func Chat(writer http.ResponseWriter, request *http.Request) {
 	query := request.URL.Query()
 	Id := query.Get("userId")
 	userId, _ := strconv.ParseInt(Id, 10, 64)
-	//msgType := query.Get("type")
-	//targetId := query.Get("targetId")
-	//	context := query.Get("context")
 	isvalida := true //checkToke()  待.........
 	conn, err := (&websocket.Upgrader{
 		//token 校验
@@ -101,7 +98,6 @@ func sendProc(node *Node) {
 	for {
 		select {
 		case data := <-node.DataQueue:
-			fmt.Println("[ws]sendProc >>>> msg :", string(data))
 			err := node.Conn.WriteMessage(websocket.TextMessage, data)
 			if err != nil {
 				fmt.Println(err)
@@ -129,7 +125,6 @@ func recvProc(node *Node) {
 		} else {
 			dispatch(data)
 			broadMsg(data) //todo 将消息广播到局域网
-			fmt.Println("[ws] recvProc <<<<< ", string(data))
 		}
 	}
 }
@@ -201,14 +196,9 @@ func dispatch(data []byte) {
 	}
 	switch msg.Type {
 	case 1: //私信
-		fmt.Println("dispatch  data :", string(data))
 		sendMsg(msg.TargetId, data)
 	case 2: //群发
 		sendGroupMsg(msg.TargetId, data) //发送的群ID ，消息内容
-		// case 4: // 心跳
-		// 	node.Heartbeat()
-		//case 4:
-		//
 	}
 }
 func sendGroupMsg(targetId int64, msg []byte) {
@@ -250,15 +240,8 @@ func sendMsg(userId int64, msg []byte) {
 	targetIdStr := strconv.Itoa(int(userId))
 	userIdStr := strconv.Itoa(int(jsonMsg.UserId))
 	jsonMsg.CreateTime = uint64(time.Now().Unix())
-	r, err := utils.Red.Get(ctx, "online_"+userIdStr).Result()
-	if err != nil {
-		fmt.Println(err)
-	}
-	if r != "" {
-		if ok {
-			fmt.Println("sendMsg >>> userID: ", userId, "  msg:", string(msg))
-			node.DataQueue <- msg
-		}
+	if ok {
+		node.DataQueue <- msg
 	}
 	var key string
 	if userId > jsonMsg.UserId {
@@ -271,12 +254,10 @@ func sendMsg(userId int64, msg []byte) {
 		fmt.Println(err)
 	}
 	score := float64(cap(res)) + 1
-	ress, e := utils.Red.ZAdd(ctx, key, &redis.Z{score, msg}).Result() //jsonMsg
-	//res, e := utils.Red.Do(ctx, "zadd", key, 1, jsonMsg).Result() //备用 后续拓展 记录完整msg
+	_, e := utils.Red.ZAdd(ctx, key, &redis.Z{score, msg}).Result() //jsonMsg
 	if e != nil {
 		fmt.Println(e)
 	}
-	fmt.Println(ress)
 }
 
 // 需要重写此方法才能完整的msg转byte[]
@@ -312,13 +293,6 @@ func RedisMsg(userIdA int64, userIdB int64, start int64, end int64, isRev bool) 
 	if err != nil {
 		fmt.Println(err) //没有找到
 	}
-	// 发送推送消息
-	/**
-	// 后台通过websoket 推送消息
-	for _, val := range rels {
-		fmt.Println("sendMsg >>> userID: ", userIdA, "  msg:", val)
-		node.DataQueue <- []byte(val)
-	}**/
 	return rels
 }
 
