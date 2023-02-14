@@ -26,6 +26,6 @@ func MakePassword(plainpwd, salt string) string {
 
 // 解密
 func ValidPassword(plainpwd, salt string, password string) bool {
-	md := Md5Encode(plainpwd + salt)
+	md := MakePassword(plainpwd, salt)
 	return md == password
 }

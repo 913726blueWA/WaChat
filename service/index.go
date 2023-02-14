@@ -24,9 +24,6 @@ func ToRegister(c *gin.Context) {
 		panic(err)
 	}
 	ind.Execute(c.Writer, "register")
-	// c.JSON(200, gin.H{
-	// 	"message": "welcome !!  ",
-	// })
 }
 func ToChat(c *gin.Context) {
 	ind, err := template.ParseFiles("views/chat/index.html",

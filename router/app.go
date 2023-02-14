@@ -16,10 +16,11 @@ func Router() *gin.Engine {
 	//静态资源
 	r.Static("/asset", "asset/")
 	r.StaticFile("/favicon.ico", "asset/images/favicon.ico")
-	//	r.StaticFS()
 	r.LoadHTMLGlob("views/**/*")
-	r.GET("/", service.GetIndex)
 
+	//登录注册
+	r.GET("/", service.GetIndex)
+	r.GET("/index", service.GetIndex)
 	r.GET("/toRegister", service.ToRegister)
 	r.GET("/toChat", service.ToChat)
 	r.GET("/chat", service.Chat)
@@ -39,7 +40,7 @@ func Router() *gin.Engine {
 	//添加好友
 	r.POST("/contact/addfriend", service.AddFriend)
 	//上传文件
-	//r.POST("/attach/upload", service.Upload)
+	r.POST("/attach/upload", service.Upload)
 	//创建群
 	r.POST("/contact/createCommunity", service.CreateCommunity)
 	//群列表
